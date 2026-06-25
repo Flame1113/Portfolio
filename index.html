@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Glen Dsouza — EE Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">Glen Dsouza<span class="nav-logo-dot">_</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-link active">Home</a></li>
+      <li><a href="projects.html" class="nav-link">Projects</a></li>
+      <li><a href="about.html" class="nav-link">About</a></li>
+      <li><a href="files/resume.pdf" download="Glen-Dsouza-Resume.pdf" class="nav-link">Resume</a></li>
+      <li><a href="about.html#contact" class="nav-link nav-link--contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-eyebrow">
+      <span class="terminal-prefix">~/engineering $</span>
+      <span class="terminal-cursor">▋</span>
+    </div>
+    <h1 class="hero-name">Glen Dsouza</h1>
+    <p class="hero-title">Electrical Engineering <span class="accent">@ Cal Poly SLO</span></p>
+    <p class="hero-summary">
+      Hardware-first builder focused on embedded systems, custom PCB design,
+      and mechatronic integration — from KiCad schematics to 3D-printed chassis assemblies.
+    </p>
+    <div class="hero-actions">
+      <a href="projects.html" class="btn btn--primary">View Projects</a>
+      <a href="files/resume.pdf" download="Glen-Dsouza-Resume.pdf" class="btn btn--ghost">Download Resume</a>
+      <a href="https://flame1113.github.io/Portfolio/" target="_blank" rel="noopener" class="btn btn--ghost">Portfolio ↗</a>
+    </div>
+
+    <!-- STAT STRIP -->
+    <div class="stat-strip">
+      <div class="stat">
+        <span class="stat-value">2</span>
+        <span class="stat-label">Featured Projects</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-value">KiCad</span>
+        <span class="stat-label">Custom PCB Design</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-value">Cal Poly</span>
+        <span class="stat-label">EE — Fall 2026</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED PROJECTS -->
+  <section class="section">
+    <div class="section-header">
+      <span class="section-eyebrow">Featured Work</span>
+      <h2 class="section-title">Selected Projects</h2>
+    </div>
+    <div class="project-grid">
+
+      <a href="projects.html#mini-z" class="project-card">
+        <div class="project-card-tag">Mechatronics</div>
+        <h3 class="project-card-title">Custom Mini-Z 1:28 RC Platform</h3>
+        <p class="project-card-desc">Designed a compact RC platform with a custom KiCad controller PCB, ATtiny85 motor control, and precision 3D-printed chassis integration.</p>
+        <div class="project-card-stack">
+          <span class="chip">ATtiny85</span>
+          <span class="chip">DRV8833</span>
+          <span class="chip">Fusion 360</span>
+        </div>
+        <span class="project-card-arrow">→</span>
+      </a>
+
+      <a href="projects.html#cvcu" class="project-card">
+        <div class="project-card-tag">Embedded Systems</div>
+        <h3 class="project-card-title">Centralized Vehicle Control Unit</h3>
+        <p class="project-card-desc">Delivered a centralized control PCB for a Power Wheels ride-on, combining ESP32 control, RFID access, OLED feedback, audio amplification, and MOSFET power switching.</p>
+        <div class="project-card-stack">
+          <span class="chip">ESP32</span>
+          <span class="chip">RFID</span>
+          <span class="chip">MOSFET</span>
+        </div>
+        <span class="project-card-arrow">→</span>
+      </a>
+
+    </div>
+    <div class="section-cta">
+      <a href="projects.html" class="btn btn--ghost">All Projects →</a>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="section section--alt">
+    <div class="section-header">
+      <span class="section-eyebrow">Toolbox</span>
+      <h2 class="section-title">Tools & Skills</h2>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <h4 class="skill-group-title">EE / Hardware</h4>
+        <ul class="skill-list">
+          <li>KiCad PCB Design</li>
+          <li>Schematic Capture</li>
+          <li>PCB Layout & DFM</li>
+          <li>Oscilloscope / DMM</li>
+          <li>Power Electronics</li>
+          <li>BMS Design</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h4 class="skill-group-title">Embedded / Firmware</h4>
+        <ul class="skill-list">
+          <li>ESP32 / Arduino</li>
+          <li>C / C++</li>
+          <li>I²C, SPI, UART</li>
+          <li>FreeRTOS</li>
+          <li>PWM Control</li>
+          <li>USB Protocols</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h4 class="skill-group-title">CAD / Fabrication</h4>
+        <ul class="skill-list">
+          <li>Fusion 360</li>
+          <li>FDM 3D Printing</li>
+          <li>Enclosure Design</li>
+          <li>Soldering (SMD/THT)</li>
+          <li>DXF / STEP Export</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h4 class="skill-group-title">Software / Workflow</h4>
+        <ul class="skill-list">
+          <li>Git / GitHub</li>
+          <li>Python</li>
+          <li>LTspice Simulation</li>
+          <li>MATLAB (intro)</li>
+          <li>VS Code</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="footer-name">Glen Dsouza</span>
+      <div class="footer-links">
+        <a href="files/resume.pdf" download="Glen-Dsouza-Resume.pdf">Resume</a>
+        <a href="https://github.com/Flame1113" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/glen-dsouza-743a21319" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:glendzs12@gmail.com">Email</a>
+      </div>
+      <span class="footer-copy">EE @ Cal Poly SLO</span>
+    </div>
+  </footer>
+
+</body>
+</html>

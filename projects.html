@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects — Glen Dsouza EE Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Google model-viewer for .glb / .gltf 3D display -->
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">Glen Dsouza<span class="nav-logo-dot">_</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="projects.html" class="nav-link active">Projects</a></li>
+      <li><a href="about.html" class="nav-link">About</a></li>
+      <li><a href="files/resume.pdf" download="Glen-Dsouza-Resume.pdf" class="nav-link">Resume</a></li>
+      <li><a href="about.html#contact" class="nav-link nav-link--contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <section class="page-header">
+    <span class="section-eyebrow">Hardware Portfolio</span>
+    <h1 class="page-title">Projects</h1>
+    <p class="page-subtitle">Custom PCB design, power electronics, and vehicle control systems delivered with practical hardware and clear documentation.</p>
+  </section>
+
+  <!-- ============================================================
+       PROJECT 1: CUSTOM MINI-Z 1:28 RC PLATFORM
+       ============================================================ -->
+  <article class="project" id="mini-z">
+    <div class="project-meta-bar">
+      <span class="project-tag">Mechatronics</span>
+      <span class="project-num">01</span>
+    </div>
+
+    <header class="project-header">
+      <h2 class="project-title">Custom Mini-Z 1:28 RC Platform</h2>
+      <div class="project-chips">
+        <span class="chip">ATtiny85</span>
+        <span class="chip">DRV8833</span>
+        <span class="chip">KiCad</span>
+        <span class="chip">Fusion 360</span>
+      </div>
+    </header>
+
+    <!-- 3D VIEWER -->
+    <div class="viewer-wrapper">
+      <div class="viewer-label">
+        <span class="viewer-label-dot"></span>
+        Interactive 3D Model — drag to rotate, scroll to zoom
+      </div>
+      <model-viewer
+        class="model-viewer"
+        src="models/miniZ.glb"
+        alt="Custom Mini-Z 1:28 RC platform 3D model"
+        camera-controls
+        auto-rotate
+        auto-rotate-delay="2000"
+        rotation-per-second="15deg"
+        shadow-intensity="1"
+        environment-image="neutral"
+        exposure="1"
+        tone-mapping="neutral"
+        poster="images/miniz-poster.jpg"
+      >
+        <div class="viewer-placeholder" slot="poster">
+          <div class="viewer-placeholder-inner">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+            <p>Place your <code>miniZ.glb</code> in <code>models/</code></p>
+          </div>
+        </div>
+      </model-viewer>
+      <p class="viewer-hint">File: <code>models/miniZ.glb</code></p>
+    </div>
+
+    <div class="project-writeup">
+      <div class="writeup-block">
+        <h3 class="writeup-heading">Problem</h3>
+        <p>At 1:28 scale, the available volume for electronics and mounting hardware is extremely limited. Off-the-shelf RC controllers could not fit the vehicle layout, which required a compact solution for steering, drive, and power delivery.</p>
+      </div>
+      <div class="writeup-block">
+        <h3 class="writeup-heading">Solution</h3>
+        <p>Developed a custom controller PCB and 3D-printed chassis that fit the vehicle envelope while supporting motor and steering control. The board uses an ATtiny85 and DRV8833 dual H-bridge, with an AMS1117-5.0 regulator for a stable 5 V rail. PCB and chassis features were designed together to ensure fit, mounting, and wiring clearance.</p>
+      </div>
+      <div class="writeup-block">
+        <h3 class="writeup-heading">Tools & Process</h3>
+        <ul class="tools-list">
+          <li><span class="tool-name">KiCad</span> — Schematic capture, PCB layout, and board outline definition</li>
+          <li><span class="tool-name">Fusion 360</span> — Chassis CAD, tolerance analysis, and STEP export for fit verification</li>
+          <li><span class="tool-name">FDM 3D Printing</span> — Rapid prototyping of structural and mounting components</li>
+          <li><span class="tool-name">Arduino C++</span> — ATtiny85 firmware for motor drive and servo control</li>
+          <li><span class="tool-name">Reflow / Hand Soldering</span> — SMD population and bring-up validation</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="gallery">
+      <h3 class="gallery-title">Build Gallery</h3>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="images/miniz/PCBTrace.png" alt="Mini-Z PCB traces (render)" loading="lazy" />
+          <span class="gallery-caption">PCB traces (KiCad view)</span>
+        </div>
+        <div class="gallery-item">
+          <img src="images/miniz/PCBFabricated.jpg" alt="Mini-Z fabricated PCB photo" loading="lazy" />
+          <span class="gallery-caption">Fabricated PCB (photo)</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-links">
+      <a href="https://github.com/Flame1113" target="_blank" rel="noopener" class="btn btn--ghost btn--sm">
+        GitHub — PCB, CAD & Firmware →
+      </a>
+    </div>
+  </article>
+
+  <div class="project-divider"></div>
+
+  <!-- ============================================================
+       PROJECT 2: CVCU — POWER WHEELS VEHICLE CONTROLLER
+       ============================================================ -->
+  <article class="project" id="cvcu">
+    <div class="project-meta-bar">
+      <span class="project-tag">Embedded Systems</span>
+      <span class="project-num">02</span>
+    </div>
+
+    <header class="project-header">
+      <h2 class="project-title">Centralized Vehicle Control Unit (CVCU)</h2>
+      <div class="project-chips">
+        <span class="chip">ESP32-WROOM</span>
+        <span class="chip">RFID</span>
+        <span class="chip">MOSFET Switching</span>
+        <span class="chip">KiCad</span>
+      </div>
+    </header>
+
+    <!-- 3D VIEWER -->
+    <div class="viewer-wrapper">
+      <div class="viewer-label">
+        <span class="viewer-label-dot"></span>
+        Interactive 3D Model — drag to rotate, scroll to zoom
+      </div>
+      <model-viewer
+        class="model-viewer"
+        src="models/powerWheels.glb"
+        alt="Power Wheels CVCU PCB 3D model"
+        camera-controls
+        auto-rotate
+        auto-rotate-delay="2000"
+        rotation-per-second="15deg"
+        shadow-intensity="1"
+        environment-image="neutral"
+        exposure="1"
+        tone-mapping="neutral"
+        poster="images/cvcu-poster.jpg"
+      >
+        <div class="viewer-placeholder" slot="poster">
+          <div class="viewer-placeholder-inner">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+            <p>Place your <code>powerWheels.glb</code> in <code>models/</code></p>
+          </div>
+        </div>
+      </model-viewer>
+      <p class="viewer-hint">File: <code>models/powerWheels.glb</code></p>
+    </div>
+
+    <div class="project-writeup">
+      <div class="writeup-block">
+        <h3 class="writeup-heading">Problem</h3>
+        <p>Ride-on vehicle controls were split into separate consumer modules, which made sensing, access control, and power switching unreliable at the system level. The design needed a central board that could handle high motor current while providing a cleaner user interface and secure start control.</p>
+      </div>
+      <div class="writeup-block">
+        <h3 class="writeup-heading">Solution</h3>
+        <p>Built a custom 2-layer central control PCB for a Power Wheels platform. It uses an ESP32-WROOM-32U for control and telemetry, RFID for access control, OLED for status display, and a DFR0299 amplifier for audio feedback. AO3400 MOSFETs switch the motor current, while an SPDT relay isolates main power. The board was assembled with heavy-duty terminals for safe motor connections and integrated firmware, schematic, and layout work into one system.</p>
+      </div>
+      <div class="writeup-block">
+        <h3 class="writeup-heading">Tools & Process</h3>
+        <ul class="tools-list">
+          <li><span class="tool-name">KiCad</span> — Schematic capture, PCB layout, and design rule checking</li>
+          <li><span class="tool-name">ESP32 / Arduino</span> — Firmware development, peripheral integration, and telemetry</li>
+          <li><span class="tool-name">Reflow Heat Plate</span> — Controlled SMD reflow for component population</li>
+          <li><span class="tool-name">Precision Soldering</span> — Hand assembly of connectors, relays, and power-stage components</li>
+          <li><span class="tool-name">Oscilloscope / DMM</span> — Power rail validation and switching verification</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="gallery">
+      <h3 class="gallery-title">Build Gallery</h3>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="images/cvcu/powerWheelsSchematic.png" alt="CVCU schematic" loading="lazy" />
+          <span class="gallery-caption">System schematic</span>
+        </div>
+        <div class="gallery-item">
+          <img src="images/cvcu/powerWheelsTraces.png" alt="CVCU PCB traces" loading="lazy" />
+          <span class="gallery-caption">PCB traces and power routing</span>
+        </div>
+        <div class="gallery-item">
+          <img src="images/cvcu/powerWheelsFabricated.png" alt="CVCU fabricated PCB" loading="lazy" />
+          <span class="gallery-caption">Fabricated PCB — assembled power module</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-links">
+      <a href="https://github.com/Flame1113" target="_blank" rel="noopener" class="btn btn--ghost btn--sm">
+        GitHub — Firmware & PCB →
+      </a>
+      <a href="files/cvcu-schematic.pdf" target="_blank" class="btn btn--ghost btn--sm">
+        Schematic PDF →
+      </a>
+    </div>
+  </article>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="footer-name">Glen Dsouza</span>
+      <div class="footer-links">
+        <a href="files/resume.pdf" download="Glen-Dsouza-Resume.pdf">Resume</a>
+        <a href="https://github.com/Flame1113" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/glen-dsouza-743a21319" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:glendzs12@gmail.com">Email</a>
+      </div>
+      <span class="footer-copy">EE @ Cal Poly SLO</span>
+    </div>
+  </footer>
+
+</body>
+<script>
+// Simple lightbox with zoom (wheel to zoom, dblclick to toggle)
+(() => {
+  const imgs = document.querySelectorAll('.gallery-grid .gallery-item img');
+  if (!imgs.length) return;
+
+  // build lightbox
+  const backdrop = document.createElement('div');
+  backdrop.className = 'lightbox-backdrop';
+  backdrop.setAttribute('role','dialog');
+  backdrop.setAttribute('aria-hidden','true');
+
+  const figure = document.createElement('figure');
+  figure.className = 'lightbox-figure';
+  const inner = document.createElement('div'); inner.className = 'lightbox-inner';
+  const lbImg = document.createElement('img'); lbImg.alt = '';
+  inner.appendChild(lbImg);
+  const caption = document.createElement('figcaption'); caption.className = 'lightbox-caption';
+  const closeBtn = document.createElement('button'); closeBtn.className = 'lightbox-close'; closeBtn.textContent = '✕';
+
+  figure.appendChild(inner);
+  figure.appendChild(caption);
+  backdrop.appendChild(figure);
+  backdrop.appendChild(closeBtn);
+  document.body.appendChild(backdrop);
+
+  let currentScale = 1;
+  const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
+
+  function open(imgEl) {
+    lbImg.src = imgEl.src;
+    lbImg.alt = imgEl.alt || '';
+    const capEl = imgEl.parentElement.querySelector('.gallery-caption');
+    caption.textContent = capEl ? capEl.textContent : '';
+    currentScale = 1;
+    lbImg.style.transform = 'scale(1)';
+    backdrop.classList.add('open');
+    backdrop.setAttribute('aria-hidden','false');
+    document.body.style.overflow = 'hidden';
+    // focus for keyboard
+    closeBtn.focus();
+  }
+
+  function close() {
+    backdrop.classList.remove('open');
+    backdrop.setAttribute('aria-hidden','true');
+    document.body.style.overflow = '';
+  }
+
+  imgs.forEach(i => i.addEventListener('click', e => { open(e.currentTarget); }));
+
+  // close handlers
+  backdrop.addEventListener('click', (e) => {
+    if (e.target === backdrop) close();
+  });
+  closeBtn.addEventListener('click', close);
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+
+  // zoom with wheel
+  backdrop.addEventListener('wheel', (e) => {
+    if (backdrop.getAttribute('aria-hidden') === 'true') return;
+    e.preventDefault();
+    const delta = -e.deltaY || e.wheelDelta || -e.detail;
+    currentScale = clamp(currentScale + (delta > 0 ? 0.12 : -0.12), 1, 4);
+    lbImg.style.transform = `scale(${currentScale})`;
+  }, { passive: false });
+
+  // dblclick to toggle between fit and 2x
+  lbImg.addEventListener('dblclick', () => {
+    currentScale = currentScale > 1.05 ? 1 : 2;
+    lbImg.style.transform = `scale(${currentScale})`;
+  });
+})();
+</script>
+</html>

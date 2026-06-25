@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Glen Dsouza — Resume</title>
+  <style>
+    @page { margin: 0.55in 0.6in; size: letter; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Segoe UI", Calibri, Arial, sans-serif;
+      font-size: 10.5pt;
+      line-height: 1.35;
+      color: #111;
+      max-width: 7.5in;
+    }
+    h1 { font-size: 20pt; font-weight: 700; letter-spacing: -0.02em; }
+    .contact { margin-top: 4px; font-size: 9.5pt; color: #333; }
+    .portfolio-line {
+      margin-top: 8px;
+      padding: 7px 10px;
+      border: 1.5px solid #4338ca;
+      border-radius: 4px;
+      background: #eef2ff;
+      font-size: 10pt;
+      font-weight: 600;
+      color: #312e81;
+    }
+    .portfolio-line span { font-weight: 400; color: #4338ca; }
+    h2 {
+      margin-top: 14px;
+      margin-bottom: 5px;
+      font-size: 10.5pt;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 2px;
+    }
+    .entry { margin-top: 8px; }
+    .entry-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      font-weight: 700;
+    }
+    .entry-role { font-style: italic; font-weight: 500; margin-top: 1px; }
+    .entry-date { font-weight: 600; white-space: nowrap; }
+    .detail { margin-top: 2px; color: #333; }
+    ul { margin: 3px 0 0 18px; }
+    li { margin-bottom: 2px; }
+    .skills { margin-top: 4px; }
+    .skills div { margin-bottom: 3px; }
+    .skills strong { font-weight: 700; }
+  </style>
+</head>
+<body>
+
+  <h1>Glen A. Dsouza</h1>
+  <p class="contact">
+    glendzs12@gmail.com &nbsp;|&nbsp; (805) 822-9584 &nbsp;|&nbsp;
+    linkedin.com/in/glen-dsouza-743a21319 &nbsp;|&nbsp; github.com/Flame1113
+  </p>
+  <p class="portfolio-line">
+    Engineering Portfolio → <span>flame1113.github.io/Portfolio</span>
+    &nbsp;&nbsp;(project write-ups, 3D models, schematics &amp; build documentation)
+  </p>
+
+  <h2>Education</h2>
+  <div class="entry">
+    <div class="entry-header">
+      <span>California Polytechnic State University, San Luis Obispo</span>
+      <span class="entry-date">Expected May 2030</span>
+    </div>
+    <p class="entry-role">B.S. Electrical Engineering — Incoming, College of Engineering</p>
+  </div>
+  <div class="entry">
+    <div class="entry-header">
+      <span>Newbury Park High School, Newbury Park, CA</span>
+      <span class="entry-date">Expected June 2026</span>
+    </div>
+    <p class="detail">GPA: 4.00 UW / 4.71 W</p>
+  </div>
+
+  <h2>Technical Projects</h2>
+  <div class="entry">
+    <div class="entry-header">
+      <span>Power Wheels — Centralized Vehicle Control Unit (CVCU)</span>
+      <span class="entry-date">2024 — 2025</span>
+    </div>
+    <p class="entry-role">Designer &amp; Integrator</p>
+    <ul>
+      <li>Designed a custom PCB as the centralized control hub for a modified Power Wheels ride-on, integrating ESP32-WROOM-32U telemetry, RFID access control, OLED UI, and DFR0299 audio amplification</li>
+      <li>Implemented AO3400 N-channel MOSFET propulsion switching with SPDT relay isolation and heavy-duty motor terminals; populated the board via reflow and precision soldering</li>
+    </ul>
+  </div>
+  <div class="entry">
+    <div class="entry-header">
+      <span>Custom Mini-Z 1:28 RC Platform</span>
+      <span class="entry-date">July 2025 — Oct 2025</span>
+    </div>
+    <p class="entry-role">Designer &amp; Fabricator</p>
+    <ul>
+      <li>Co-designed a 1:28 scale RC platform pairing a custom KiCad controller PCB (ATtiny85, DRV8833PWP) with a 3D-printed chassis under sub-millimeter packaging constraints</li>
+      <li>Integrated propulsion and steering servo subsystems; independently assembled, soldered, and validated electromechanical performance</li>
+    </ul>
+  </div>
+  <div class="entry">
+    <div class="entry-header">
+      <span>Numeric Operated Door Lock</span>
+      <span class="entry-date">May 2024 — July 2024</span>
+    </div>
+    <p class="entry-role">Project Developer</p>
+    <ul>
+      <li>Built an ESP32-based access system with helix keypad input, 5 V servo actuation, LCD feedback, and buzzer status signaling</li>
+      <li>Developed control firmware in Arduino C++ for password validation and lock state management</li>
+    </ul>
+  </div>
+
+  <h2>Experience</h2>
+  <div class="entry">
+    <div class="entry-header">
+      <span>Kumon — Thousand Oaks, CA</span>
+      <span class="entry-date">May 2024 — Present</span>
+    </div>
+    <p class="entry-role">Paid Tutor</p>
+    <ul>
+      <li>Evaluate and grade math and reading assessments for students across grade levels</li>
+      <li>Deliver targeted instructional support to students requiring additional concept reinforcement</li>
+    </ul>
+  </div>
+  <div class="entry">
+    <div class="entry-header">
+      <span>SparkPrintz — Remote</span>
+      <span class="entry-date">June 2024 — Aug 2024</span>
+    </div>
+    <p class="entry-role">Sales &amp; Marketing Intern</p>
+    <ul>
+      <li>Contacted school administrators and faculty to market SparkPrintz apparel printing services</li>
+      <li>Conducted market research and authored business analysis write-ups on company positioning</li>
+    </ul>
+  </div>
+
+  <h2>Technical Skills</h2>
+  <div class="skills">
+    <div><strong>Programming:</strong> C++, Python, Java, JavaScript, HTML/CSS, SQL</div>
+    <div><strong>EE / Design:</strong> KiCad, Altium, AutoCAD, PCB Layout, SMD Assembly, Power Electronics</div>
+    <div><strong>Embedded:</strong> ESP32, ATtiny85, Arduino, PWM Motor Control, I²C, UART</div>
+    <div><strong>CAD / Fab:</strong> Fusion 360, FDM 3D Printing, Reflow Soldering, Enclosure Design</div>
+  </div>
+
+</body>
+</html>

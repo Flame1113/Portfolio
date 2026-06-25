@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects — Glen Dsouza EE Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Google model-viewer for .glb / .gltf 3D display -->
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">YN<span class="nav-logo-dot">_</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="projects.html" class="nav-link active">Projects</a></li>
+      <li><a href="about.html" class="nav-link">About</a></li>
+      <li><a href="files/resume.pdf" download="Glen-Dsouza-Resume.pdf" class="nav-link">Resume</a></li>
+      <li><a href="about.html#contact" class="nav-link nav-link--contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <section class="page-header">
+    <span class="section-eyebrow">Hardware Portfolio</span>
+    <h1 class="page-title">Projects</h1>
+    <p class="page-subtitle">Custom PCB design, power electronics, and motor control — built, tested, and documented from first principles.</p>
+  </section>
+
+  <!-- ============================================================
+       PROJECT 1: CUSTOM MINI-Z 1:28 RC PLATFORM
+       ============================================================ -->
+  <article class="project" id="mini-z">
+    <div class="project-meta-bar">
+      <span class="project-tag">Mechatronics</span>
+      <span class="project-num">01</span>
+    </div>
+
+    <header class="project-header">
+      <h2 class="project-title">Custom Mini-Z 1:28 RC Platform</h2>
+      <div class="project-chips">
+        <span class="chip">ATtiny85</span>
+        <span class="chip">DRV8833</span>
+        <span class="chip">KiCad</span>
+        <span class="chip">Fusion 360</span>
+      </div>
+    </header>
+
+    <!-- 3D VIEWER -->
+    <div class="viewer-wrapper">
+      <div class="viewer-label">
+        <span class="viewer-label-dot"></span>
+        Interactive 3D Model — drag to rotate, scroll to zoom
+      </div>
+      <model-viewer
+        class="model-viewer"
+        src="models/miniZ.glb"
+        alt="Custom Mini-Z 1:28 RC platform 3D model"
+        camera-controls
+        auto-rotate
+        auto-rotate-delay="2000"
+        rotation-per-second="15deg"
+        shadow-intensity="1"
+        environment-image="neutral"
+        exposure="1"
+        tone-mapping="neutral"
+        poster="images/miniz-poster.jpg"
+      >
+        <div class="viewer-placeholder" slot="poster">
+          <div class="viewer-placeholder-inner">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+            <p>Place your <code>miniZ.glb</code> in <code>models/</code></p>
+          </div>
+        </div>
+      </model-viewer>
+      <p class="viewer-hint">File: <code>models/miniZ.glb</code></p>
+    </div>
+
+    <div class="project-writeup">
+      <div class="writeup-block">
+        <h3 class="writeup-heading">Problem</h3>
+        <p>At 1:28 scale, RC platforms impose severe packaging constraints on both mechanical structure and onboard electronics. Commercial controller boards and chassis assemblies are not co-designed for custom geometries, leaving no viable path to integrate a bespoke drivetrain, steering servo, and power distribution within sub-millimeter clearances.</p>
+      </div>
+      <div class="writeup-block">
+        <h3 class="writeup-heading">Solution</h3>
+        <p>Engineered a fully integrated mechatronic platform pairing a custom 3D-printed chassis with a purpose-built controller PCB. The board centers on an ATtiny85-20P microcontroller and a DRV8833PWP dual H-bridge motor driver IC for coordinated propulsion and steering servo actuation, with an AMS1117-5.0 LDO supplying a regulated 5 V rail. PCB outline, mounting features, and chassis geometry were developed concurrently so electrical and mechanical subsystems share the same dimensional envelope.</p>
+      </div>
+      <div class="writeup-block">
+        <h3 class="writeup-heading">Tools & Process</h3>
+        <ul class="tools-list">
+          <li><span class="tool-name">KiCad</span> — Schematic capture, PCB layout, and board outline definition</li>
+          <li><span class="tool-name">Fusion 360</span> — Chassis CAD, tolerance analysis, and STEP export for fit verification</li>
+          <li><span class="tool-name">FDM 3D Printing</span> — Rapid prototyping of structural and mounting components</li>
+          <li><span class="tool-name">Arduino C++</span> — ATtiny85 firmware for motor drive and servo control</li>
+          <li><span class="tool-name">Reflow / Hand Soldering</span> — SMD population and bring-up validation</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="gallery">
+      <h3 class="gallery-title">Build Gallery</h3>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="images/miniz/schematic.jpg" alt="Mini-Z controller schematic" loading="lazy" />
+          <span class="gallery-caption">KiCad schematic</span>
+        </div>
+        <div class="gallery-item">
+          <img src="images/miniz/pcb.jpg" alt="Mini-Z controller PCB layout" loading="lazy" />
+          <span class="gallery-caption">PCB layout — top copper</span>
+        </div>
+        <div class="gallery-item">
+          <img src="images/miniz/chassis.jpg" alt="3D printed Mini-Z chassis" loading="lazy" />
+          <span class="gallery-caption">Custom 3D-printed chassis</span>
+        </div>
+        <div class="gallery-item">
+          <img src="images/miniz/assembled.jpg" alt="Assembled Mini-Z platform" loading="lazy" />
+          <span class="gallery-caption">Integrated mechanical assembly</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-links">
+      <a href="https://github.com/Flame1113" target="_blank" rel="noopener" class="btn btn--ghost btn--sm">
+        GitHub — PCB, CAD & Firmware →
+      </a>
+    </div>
+  </article>
+
+  <div class="project-divider"></div>
+
+  <!-- ============================================================
+       PROJECT 2: CVCU — POWER WHEELS VEHICLE CONTROLLER
+       ============================================================ -->
+  <article class="project" id="cvcu">
+    <div class="project-meta-bar">
+      <span class="project-tag">Embedded Systems</span>
+      <span class="project-num">02</span>
+    </div>
+
+    <header class="project-header">
+      <h2 class="project-title">Centralized Vehicle Control Unit (CVCU)</h2>
+      <div class="project-chips">
+        <span class="chip">ESP32-WROOM</span>
+        <span class="chip">RFID</span>
+        <span class="chip">MOSFET Switching</span>
+        <span class="chip">KiCad</span>
+      </div>
+    </header>
+
+    <!-- 3D VIEWER -->
+    <div class="viewer-wrapper">
+      <div class="viewer-label">
+        <span class="viewer-label-dot"></span>
+        Interactive 3D Model — drag to rotate, scroll to zoom
+      </div>
+      <model-viewer
+        class="model-viewer"
+        src="models/motor-esc.glb"
+        alt="Power Wheels CVCU PCB 3D model"
+        camera-controls
+        auto-rotate
+        auto-rotate-delay="2000"
+        rotation-per-second="15deg"
+        shadow-intensity="1"
+        environment-image="neutral"
+        exposure="1"
+        tone-mapping="neutral"
+        poster="images/cvcu-poster.jpg"
+      >
+        <div class="viewer-placeholder" slot="poster">
+          <div class="viewer-placeholder-inner">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+            <p>Place your <code>motor-esc.glb</code> in <code>models/</code></p>
+          </div>
+        </div>
+      </model-viewer>
+      <p class="viewer-hint">File: <code>models/motor-esc.glb</code></p>
+    </div>
+
+    <div class="project-writeup">
+      <div class="writeup-block">
+        <h3 class="writeup-heading">Problem</h3>
+        <p>Stock ride-on vehicle electronics distribute control across discrete consumer modules with no unified I/O, access control, or telemetry path. High-current 550-size motor loads require robust switching and isolation, while user-facing subsystems — status display, audio feedback, and wireless connectivity — must coexist on a single board without compromising propulsion reliability.</p>
+      </div>
+      <div class="writeup-block">
+        <h3 class="writeup-heading">Solution</h3>
+        <p>Designed a custom 2-layer PCB as the centralized vehicle control unit for a Power Wheels platform. An ESP32-WROOM-32U provides firmware execution and IoT telemetry; an RFID module implements access control; a monochrome OLED delivers onboard status UI; and a DFR0299 audio amplifier IC drives integrated audio output. Propulsion is switched through AO3400 N-channel MOSFETs, with an SPDT mechanical relay providing main power isolation. Heavy-duty screw terminals route high-current motor connections off-board. Firmware, schematic design, layout, and board assembly were executed end-to-end as a single integrated system.</p>
+      </div>
+      <div class="writeup-block">
+        <h3 class="writeup-heading">Tools & Process</h3>
+        <ul class="tools-list">
+          <li><span class="tool-name">KiCad</span> — Schematic capture, PCB layout, and design rule checking</li>
+          <li><span class="tool-name">ESP32 / Arduino</span> — Firmware development, peripheral integration, and telemetry</li>
+          <li><span class="tool-name">Reflow Heat Plate</span> — Controlled SMD reflow for component population</li>
+          <li><span class="tool-name">Precision Soldering</span> — Hand assembly of connectors, relays, and power-stage components</li>
+          <li><span class="tool-name">Oscilloscope / DMM</span> — Power rail validation and switching verification</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="gallery">
+      <h3 class="gallery-title">Build Gallery</h3>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="images/cvcu/schematic.jpg" alt="CVCU schematic" loading="lazy" />
+          <span class="gallery-caption">System schematic</span>
+        </div>
+        <div class="gallery-item">
+          <img src="images/cvcu/pcb.jpg" alt="CVCU fabricated PCB" loading="lazy" />
+          <span class="gallery-caption">Fabricated PCB — power stage</span>
+        </div>
+        <div class="gallery-item">
+          <img src="images/cvcu/assembled.jpg" alt="Assembled CVCU board" loading="lazy" />
+          <span class="gallery-caption">Populated control unit</span>
+        </div>
+        <div class="gallery-item">
+          <img src="images/cvcu/vehicle.jpg" alt="CVCU installed in ride-on vehicle" loading="lazy" />
+          <span class="gallery-caption">Installed in vehicle platform</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-links">
+      <a href="https://github.com/Flame1113" target="_blank" rel="noopener" class="btn btn--ghost btn--sm">
+        GitHub — Firmware & PCB →
+      </a>
+      <a href="files/cvcu-schematic.pdf" target="_blank" class="btn btn--ghost btn--sm">
+        Schematic PDF →
+      </a>
+    </div>
+  </article>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="footer-name">Glen Dsouza</span>
+      <div class="footer-links">
+        <a href="files/resume.pdf" download="Glen-Dsouza-Resume.pdf">Resume</a>
+        <a href="https://github.com/Flame1113" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/glen-dsouza-743a21319" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:glendzs12@gmail.com">Email</a>
+      </div>
+      <span class="footer-copy">EE @ Cal Poly SLO</span>
+    </div>
+  </footer>
+
+</body>
+</html>
