@@ -14,6 +14,11 @@
   <!-- NAV -->
   <nav class="nav">
     <a href="index.html" class="nav-logo">Glen Dsouza<span class="nav-logo-dot">_</span></a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span class="nav-toggle-box">
+        <span class="nav-toggle-inner"></span>
+      </span>
+    </button>
     <ul class="nav-links">
       <li><a href="index.html" class="nav-link active">Home</a></li>
       <li><a href="projects.html" class="nav-link">Projects</a></li>
@@ -165,4 +170,19 @@
   </footer>
 
 </body>
+<script>
+  (function(){
+    const nav = document.querySelector('.nav');
+    const toggle = document.querySelector('.nav-toggle');
+    const links = document.querySelectorAll('.nav-links a');
+    function setOpen(open){
+      nav.classList.toggle('nav-open', open);
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+    toggle.addEventListener('click', function(){ setOpen(!nav.classList.contains('nav-open')); });
+    links.forEach(a => a.addEventListener('click', () => setOpen(false)));
+    // close on ESC
+    document.addEventListener('keydown', e => { if(e.key === 'Escape') setOpen(false); });
+  })();
+</script>
 </html>
