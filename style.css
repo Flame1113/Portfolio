@@ -615,6 +615,67 @@ model-viewer.model-viewer {
 }
 
 /* ============================================================
+   SYSTEM BLOCK DIAGRAM
+   ============================================================ */
+
+.system-diagram {
+  margin-bottom: 2rem;
+  padding: 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(180deg, rgba(20, 27, 34, 0.96), rgba(14, 18, 22, 0.96));
+}
+
+.diagram-header {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  margin-bottom: 0.85rem;
+}
+
+.system-diagram svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-md);
+}
+
+.system-diagram .diagram-block {
+  fill: #111a22;
+  stroke: #2e3740;
+  stroke-width: 1.2;
+}
+
+.system-diagram .diagram-block--accent {
+  fill: #12263d;
+  stroke: #4a9eff;
+  stroke-width: 1.2;
+}
+
+.system-diagram .diagram-text {
+  fill: var(--text-primary);
+  font-size: 15px;
+  font-weight: 500;
+  text-anchor: middle;
+}
+
+.system-diagram .diagram-label {
+  fill: var(--text-secondary);
+  font-size: 11px;
+  font-family: var(--font-mono);
+  text-anchor: middle;
+}
+
+.system-diagram .diagram-line {
+  stroke: var(--accent);
+  stroke-width: 1.5;
+  fill: none;
+  marker-end: url(#diagram-arrow);
+}
+
+/* ============================================================
    WRITE-UP
    ============================================================ */
 

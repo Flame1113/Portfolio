@@ -34,12 +34,146 @@
   </section>
 
   <!-- ============================================================
-       PROJECT 1: CUSTOM MINI-Z 1:28 RC PLATFORM
+       PROJECT 1: STEERING ACTUATOR CONTROLLER PCB
+       ============================================================ -->
+  <article class="project" id="steering-actuator-controller-pcb">
+    <div class="project-meta-bar">
+      <span class="project-tag">Prototype Vehicles</span>
+      <span class="project-num">01</span>
+    </div>
+
+    <header class="project-header">
+      <h2 class="project-title">Steering Actuator Controller PCB</h2>
+      <div class="project-chips">
+        <span class="chip">ESP32-WROOM-32D</span>
+        <span class="chip">CAN</span>
+        <span class="chip">Altium Designer</span>
+        <span class="chip">PROVE @ Cal Poly SLO</span>
+      </div>
+    </header>
+
+    <div class="viewer-wrapper">
+      <div class="viewer-label">
+        <span class="viewer-label-dot"></span>
+        Interactive 3D Model — drag to rotate, scroll to zoom
+      </div>
+      <model-viewer
+        class="model-viewer"
+        src="models/SteeringActuatorCAN.glb"
+        alt="Steering Actuator Controller PCB 3D model"
+        camera-controls
+        auto-rotate
+        auto-rotate-delay="2000"
+        rotation-per-second="15deg"
+        shadow-intensity="1"
+        environment-image="neutral"
+        exposure="1"
+        tone-mapping="neutral"
+      >
+        <div class="viewer-placeholder" slot="poster">
+          <div class="viewer-placeholder-inner">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+            <p>Place your <code>SteeringActuatorCAN.glb</code> in <code>models/</code></p>
+          </div>
+        </div>
+      </model-viewer>
+      <p class="viewer-hint">File: <code>models/SteeringActuatorCAN.glb</code></p>
+    </div>
+
+    <div class="system-diagram">
+      <div class="diagram-header">System Block Diagram</div>
+      <svg viewBox="0 0 860 220" role="img" aria-label="Steering actuator controller system block diagram">
+        <defs>
+          <marker id="diagram-arrow" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto">
+            <path d="M0,0 L0,6 L7,3 z" fill="#4a9eff"></path>
+          </marker>
+        </defs>
+
+        <rect class="diagram-block" x="20" y="70" width="120" height="84" rx="12"></rect>
+        <rect class="diagram-block diagram-block--accent" x="170" y="70" width="150" height="84" rx="12"></rect>
+        <rect class="diagram-block" x="350" y="70" width="150" height="84" rx="12"></rect>
+        <rect class="diagram-block diagram-block--accent" x="535" y="70" width="150" height="84" rx="12"></rect>
+        <rect class="diagram-block" x="705" y="70" width="135" height="84" rx="12"></rect>
+
+        <text class="diagram-text" x="80" y="103">12 V Vehicle</text>
+        <text class="diagram-text" x="80" y="122">Power</text>
+
+        <text class="diagram-text" x="245" y="103">Protected</text>
+        <text class="diagram-text" x="245" y="122">Power Stage</text>
+
+        <text class="diagram-text" x="425" y="103">5 V / 3.3 V</text>
+        <text class="diagram-text" x="425" y="122">Rails</text>
+
+        <text class="diagram-text" x="610" y="103">PNU0097</text>
+        <text class="diagram-text" x="610" y="122">Sensor</text>
+
+        <text class="diagram-text" x="772" y="103">ESP32 +</text>
+        <text class="diagram-text" x="772" y="122">CAN Interface</text>
+
+        <text class="diagram-label" x="80" y="42">Vehicle power</text>
+        <text class="diagram-label" x="245" y="42">Fuse + buck/LDO</text>
+        <text class="diagram-label" x="425" y="42">Regulated rails</text>
+        <text class="diagram-label" x="610" y="42">Steering angle input</text>
+        <text class="diagram-label" x="772" y="42">Vehicle CAN + actuator link</text>
+
+        <line class="diagram-line" x1="140" y1="112" x2="170" y2="112"></line>
+        <line class="diagram-line" x1="320" y1="112" x2="350" y2="112"></line>
+        <line class="diagram-line" x1="500" y1="112" x2="535" y2="112"></line>
+        <line class="diagram-line" x1="685" y1="112" x2="705" y2="112"></line>
+        <line class="diagram-line" x1="610" y1="154" x2="610" y2="180"></line>
+        <line class="diagram-line" x1="610" y1="180" x2="772" y2="180"></line>
+        <line class="diagram-line" x1="772" y1="154" x2="772" y2="180"></line>
+
+        <text class="diagram-label" x="245" y="193">ESP32 ADC reads scaled sensor voltage</text>
+        <text class="diagram-label" x="620" y="193">Vehicle CAN to TCAN337 → ESP32</text>
+      </svg>
+    </div>
+
+    <div class="project-writeup">
+      <div class="writeup-block">
+        <h3 class="writeup-heading">Problem</h3>
+        <p>PROVE (Prototype Vehicles Laboratory) at Cal Poly SLO needed a compact steering-controller interface that could safely accept vehicle power, read steering position, and exchange steering data over CAN while supporting firmware bring-up, diagnostics, and iterative development.</p>
+      </div>
+      <div class="writeup-block">
+        <h3 class="writeup-heading">Solution</h3>
+        <p>Designed a two-layer steering actuator controller PCB around an ESP32-WROOM-32D. It accepts 12 V through a fused screw-terminal input, creates regulated 5 V and 3.3 V rails, reads the PNU0097 steering-angle sensor through a scaled ADC input, and uses a TCAN337 transceiver for CANH/CANL communication. USB-C with a CH340C bridge enables programming and serial debugging, while reset/boot controls and a status LED support bring-up and system validation.</p>
+      </div>
+      <div class="writeup-block">
+        <h3 class="writeup-heading">Tools &amp; Process</h3>
+        <ul class="tools-list">
+          <li><span class="tool-name">Altium</span> — Schematic capture, layout, routing, and DRC</li>
+          <li><span class="tool-name">ESP32 / ESP-IDF</span> — Firmware, ADC acquisition, CAN communication, and diagnostics</li>
+          <li><span class="tool-name">CAN Tools</span> — Bus validation, message testing, and steering-data verification</li>
+          <li><span class="tool-name">Bench Lab</span> — Oscilloscope, DMM, and bench supply for power-rail and signal validation</li>
+          <li><span class="tool-name">Assembly</span> — Soldering and rework for connectors, USB, power parts, and SMD devices</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="gallery">
+      <h3 class="gallery-title">Build Gallery</h3>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="images/steering-actuator/SteeringActuatorCANSchematic.png" alt="Steering Actuator Controller PCB schematic" loading="lazy" />
+          <span class="gallery-caption">Schematic Capture</span>
+        </div>
+        <div class="gallery-item">
+          <img src="images/steering-actuator/SteeringActuatorCANBarePCB.png" alt="Steering Actuator Controller PCB bare board" loading="lazy" />
+          <span class="gallery-caption">Fabricated Board</span>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <div class="project-divider"></div>
+
+  <!-- ============================================================
+       PROJECT 2: CUSTOM MINI-Z 1:28 RC PLATFORM
        ============================================================ -->
   <article class="project" id="mini-z">
     <div class="project-meta-bar">
       <span class="project-tag">Mechatronics</span>
-      <span class="project-num">01</span>
+      <span class="project-num">02</span>
     </div>
 
     <header class="project-header">
@@ -70,7 +204,6 @@
         environment-image="neutral"
         exposure="1"
         tone-mapping="neutral"
-        poster="images/miniz-poster.jpg"
       >
         <div class="viewer-placeholder" slot="poster">
           <div class="viewer-placeholder-inner">
@@ -121,12 +254,12 @@
   <div class="project-divider"></div>
 
   <!-- ============================================================
-       PROJECT 2: CVCU — POWER WHEELS VEHICLE CONTROLLER
+       PROJECT 3: CVCU — POWER WHEELS VEHICLE CONTROLLER
        ============================================================ -->
   <article class="project" id="cvcu">
     <div class="project-meta-bar">
       <span class="project-tag">Embedded Systems</span>
-      <span class="project-num">02</span>
+      <span class="project-num">03</span>
     </div>
 
     <header class="project-header">
@@ -157,7 +290,6 @@
         environment-image="neutral"
         exposure="1"
         tone-mapping="neutral"
-        poster="images/cvcu-poster.jpg"
       >
         <div class="viewer-placeholder" slot="poster">
           <div class="viewer-placeholder-inner">
