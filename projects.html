@@ -72,8 +72,8 @@
       >
         <div class="viewer-placeholder" slot="poster">
           <div class="viewer-placeholder-inner">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
-            <p>Place your <code>SteeringActuatorCAN.glb</code> in <code>models/</code></p>
+            <svg class="viewer-spinner" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+            <p>Loading 3D model...</p>
           </div>
         </div>
       </model-viewer>
@@ -168,98 +168,12 @@
   <div class="project-divider"></div>
 
   <!-- ============================================================
-       PROJECT 2: CUSTOM MINI-Z 1:28 RC PLATFORM
-       ============================================================ -->
-  <article class="project" id="mini-z">
-    <div class="project-meta-bar">
-      <span class="project-tag">Mechatronics</span>
-      <span class="project-num">02</span>
-    </div>
-
-    <header class="project-header">
-      <h2 class="project-title">Custom Mini-Z 1:28 RC Platform</h2>
-      <div class="project-chips">
-        <span class="chip">ATtiny85</span>
-        <span class="chip">DRV8833</span>
-        <span class="chip">KiCad</span>
-        <span class="chip">Fusion 360</span>
-      </div>
-    </header>
-
-    <!-- 3D VIEWER -->
-    <div class="viewer-wrapper">
-      <div class="viewer-label">
-        <span class="viewer-label-dot"></span>
-        Interactive 3D Model — drag to rotate, scroll to zoom
-      </div>
-      <model-viewer
-        class="model-viewer"
-        src="models/miniZ.glb"
-        alt="Custom Mini-Z 1:28 RC platform 3D model"
-        camera-controls
-        auto-rotate
-        auto-rotate-delay="2000"
-        rotation-per-second="15deg"
-        shadow-intensity="1"
-        environment-image="neutral"
-        exposure="1"
-        tone-mapping="neutral"
-      >
-        <div class="viewer-placeholder" slot="poster">
-          <div class="viewer-placeholder-inner">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
-            <p>Place your <code>miniZ.glb</code> in <code>models/</code></p>
-          </div>
-        </div>
-      </model-viewer>
-      <p class="viewer-hint">File: <code>models/miniZ.glb</code></p>
-    </div>
-
-    <div class="project-writeup">
-      <div class="writeup-block">
-        <h3 class="writeup-heading">Problem</h3>
-        <p>At 1:28 scale, the available volume for electronics and mounting hardware is extremely limited. Off-the-shelf RC controllers could not fit the vehicle layout, which required a compact solution for steering, drive, and power delivery.</p>
-      </div>
-      <div class="writeup-block">
-        <h3 class="writeup-heading">Solution</h3>
-        <p>Developed a custom controller PCB and 3D-printed chassis that fit the vehicle envelope while supporting motor and steering control. The board uses an ATtiny85 and DRV8833 dual H-bridge, with an AMS1117-5.0 regulator for a stable 5 V rail. PCB and chassis features were designed together to ensure fit, mounting, and wiring clearance.</p>
-      </div>
-      <div class="writeup-block">
-        <h3 class="writeup-heading">Tools & Process</h3>
-        <ul class="tools-list">
-          <li><span class="tool-name">KiCad</span> — Schematic capture, PCB layout, and board outline definition</li>
-          <li><span class="tool-name">Fusion 360</span> — Chassis CAD, tolerance analysis, and STEP export for fit verification</li>
-          <li><span class="tool-name">FDM 3D Printing</span> — Rapid prototyping of structural and mounting components</li>
-          <li><span class="tool-name">Arduino C++</span> — ATtiny85 firmware for motor drive and servo control (programmed using an Arduino UNO as ISP)</li>
-          <li><span class="tool-name">Reflow / Hand Soldering</span> — SMD population and bring-up validation</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="gallery">
-      <h3 class="gallery-title">Build Gallery</h3>
-      <div class="gallery-grid">
-        <div class="gallery-item">
-          <img src="images/miniz/PCBTrace.png" alt="Mini-Z PCB copper traces" loading="lazy" />
-          <span class="gallery-caption">PCB traces</span>
-        </div>
-        <div class="gallery-item">
-          <img src="images/miniz/PCBFabricated.jpg" alt="Mini-Z fabricated PCB" loading="lazy" />
-          <span class="gallery-caption">Fabricated PCB</span>
-        </div>
-      </div>
-    </div>
-  </article>
-
-  <div class="project-divider"></div>
-
-  <!-- ============================================================
-       PROJECT 3: CVCU — POWER WHEELS VEHICLE CONTROLLER
+       PROJECT 2: CVCU — POWER WHEELS VEHICLE CONTROLLER
        ============================================================ -->
   <article class="project" id="cvcu">
     <div class="project-meta-bar">
       <span class="project-tag">Embedded Systems</span>
-      <span class="project-num">03</span>
+      <span class="project-num">02</span>
     </div>
 
     <header class="project-header">
@@ -293,8 +207,8 @@
       >
         <div class="viewer-placeholder" slot="poster">
           <div class="viewer-placeholder-inner">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
-            <p>Place your <code>powerWheels.glb</code> in <code>models/</code></p>
+            <svg class="viewer-spinner" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+            <p>Loading 3D model...</p>
           </div>
         </div>
       </model-viewer>
@@ -344,6 +258,92 @@
       </div>
     </div>
 
+  </article>
+
+  <div class="project-divider"></div>
+
+  <!-- ============================================================
+       PROJECT 3: CUSTOM MINI-Z 1:28 RC PLATFORM
+       ============================================================ -->
+  <article class="project" id="mini-z">
+    <div class="project-meta-bar">
+      <span class="project-tag">Mechatronics</span>
+      <span class="project-num">03</span>
+    </div>
+
+    <header class="project-header">
+      <h2 class="project-title">Custom Mini-Z 1:28 RC Platform</h2>
+      <div class="project-chips">
+        <span class="chip">ATtiny85</span>
+        <span class="chip">DRV8833</span>
+        <span class="chip">KiCad</span>
+        <span class="chip">Fusion 360</span>
+      </div>
+    </header>
+
+    <!-- 3D VIEWER -->
+    <div class="viewer-wrapper">
+      <div class="viewer-label">
+        <span class="viewer-label-dot"></span>
+        Interactive 3D Model — drag to rotate, scroll to zoom
+      </div>
+      <model-viewer
+        class="model-viewer"
+        src="models/miniZ.glb"
+        alt="Custom Mini-Z 1:28 RC platform 3D model"
+        camera-controls
+        auto-rotate
+        auto-rotate-delay="2000"
+        rotation-per-second="15deg"
+        shadow-intensity="1"
+        environment-image="neutral"
+        exposure="1"
+        tone-mapping="neutral"
+      >
+        <div class="viewer-placeholder" slot="poster">
+          <div class="viewer-placeholder-inner">
+            <svg class="viewer-spinner" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+            <p>Loading 3D model...</p>
+          </div>
+        </div>
+      </model-viewer>
+      <p class="viewer-hint">File: <code>models/miniZ.glb</code></p>
+    </div>
+
+    <div class="project-writeup">
+      <div class="writeup-block">
+        <h3 class="writeup-heading">Problem</h3>
+        <p>At 1:28 scale, the available volume for electronics and mounting hardware is extremely limited. Off-the-shelf RC controllers could not fit the vehicle layout, which required a compact solution for steering, drive, and power delivery.</p>
+      </div>
+      <div class="writeup-block">
+        <h3 class="writeup-heading">Solution</h3>
+        <p>Developed a custom controller PCB and 3D-printed chassis that fit the vehicle envelope while supporting motor and steering control. The board uses an ATtiny85 and DRV8833 dual H-bridge, with an AMS1117-5.0 regulator for a stable 5 V rail. PCB and chassis features were designed together to ensure fit, mounting, and wiring clearance.</p>
+      </div>
+      <div class="writeup-block">
+        <h3 class="writeup-heading">Tools & Process</h3>
+        <ul class="tools-list">
+          <li><span class="tool-name">KiCad</span> — Schematic capture, PCB layout, and board outline definition</li>
+          <li><span class="tool-name">Fusion 360</span> — Chassis CAD, tolerance analysis, and STEP export for fit verification</li>
+          <li><span class="tool-name">FDM 3D Printing</span> — Rapid prototyping of structural and mounting components</li>
+          <li><span class="tool-name">Arduino C++</span> — ATtiny85 firmware for motor drive and servo control (programmed using an Arduino UNO as ISP)</li>
+          <li><span class="tool-name">Reflow / Hand Soldering</span> — SMD population and bring-up validation</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="gallery">
+      <h3 class="gallery-title">Build Gallery</h3>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="images/miniz/PCBTrace.png" alt="Mini-Z PCB copper traces" loading="lazy" />
+          <span class="gallery-caption">PCB traces</span>
+        </div>
+        <div class="gallery-item">
+          <img src="images/miniz/PCBFabricated.jpg" alt="Mini-Z fabricated PCB" loading="lazy" />
+          <span class="gallery-caption">Fabricated PCB</span>
+        </div>
+      </div>
+    </div>
   </article>
 
   <!-- FOOTER -->
